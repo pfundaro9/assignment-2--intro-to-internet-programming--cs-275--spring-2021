@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/pfundaro9/assignment-2--intro-to-internet-programming--cs-275--spring-2021/issues"
   },
-  "homepage": "https://github.com/pfundaro9/assignment-2--intro-to-internet-programming--cs-275--spring-2021#readme"
+  "homepage": "https://github.com/pfundaro9/assignment-2--intro-to-internet-programming--cs-275--spring-2021#readme",
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
 }
