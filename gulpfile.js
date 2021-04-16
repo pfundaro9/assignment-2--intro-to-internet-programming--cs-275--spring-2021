@@ -89,10 +89,14 @@ let transpileJSForProd = () => {
 let serve = () => {
     browserSync({
         notify: true,
-        reloadDelay: 1,
+        port: 3001,
+        reloadDelay: 5,
+        browser: allBrowsers,
         server: {
             baseDir: [
-                `dev`
+                //`dev`
+                //`./`
+                `*/index.html`
             ]
         }
     });
