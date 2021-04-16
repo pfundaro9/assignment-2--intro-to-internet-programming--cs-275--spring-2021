@@ -7,31 +7,20 @@
 </head>
   <body>
     <h1>RICE RECIPES</h1>
-      <main class="contain">
+    <h5>Enter the amount of rice needed below:</h5>
+      <input type="number" placeholder="Cups of Rice" id="userInput">
         <div id="child1">
           <input type = "button" value="Sprouted California Rice" onclick="caliRiceRec()"/>
-            <div id = "Cali" style="display:none;">
-              <h4>For Slightly Al Dente Rice</h4>
-              <p>Combine 1 1/4 cups of rice with 2 cups of water or broth and 1 Tbsp olive oil.
-                Bring to a boil and stir once to mix.
-                Reduce heat to low, cover with a tight-fitting lid and cook for 25 minutes.
-                Remove from heat and let stand for 5 minutes.
-                Fluff with a fork and serve.
-              </p>
-              <h4>For Softer Rice</h4>
-              <p>Increase liquid by 1/2 cup and cook time by 5 minutes.</p>
+            <div id = "Cali">
+              <p id="output1"></p>
             </div>
         </div>
         <div id="child2">
           <input type = "button" value="White Rice" onclick="whiteRiceRec()"/>
-            <div id = "White" style="display:none;">
-              <p>Combine 1 cup of rice with 2 cups of water and 1 Tbsp olive oil.
-            Bring to a boil, then reduce heat to the lowest setting.
-            Cook for about 18 minutes.
-              </p>
+            <div id = "White">
+              <p id="output2"></p>
             </div>
         </div>
-    </main>
     <script src="../js/app.js"></script>
     </body>
 </html>

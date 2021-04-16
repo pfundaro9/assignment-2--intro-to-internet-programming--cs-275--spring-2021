@@ -4,7 +4,12 @@ body{
 }
 
 h1{
-  color: white;
+    color: white;
+    border: white;
+}
+
+h5{
+    color: white;
 }
 
 .contain{
@@ -15,10 +20,12 @@ h1{
     width: 40%;
     float: left;
     padding: 20px;
+    color: white;
 }
 
 #child2{
     width: 40%;
     float: right;
     padding: 20px;
+    color: white;
 }
