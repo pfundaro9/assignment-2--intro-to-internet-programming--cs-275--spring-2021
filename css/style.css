@@ -21,6 +21,7 @@ h5{
     float: left;
     padding: 20px;
     color: white;
+    padding-top: 20px;
 }
 
 #child2{
@@ -28,4 +29,5 @@ h5{
     float: right;
     padding: 20px;
     color: white;
+    padding-top: 20px;
 }
