@@ -1,8 +1,24 @@
-h1{
+body{
     background-color: blue;
     text-align: center;
 }
 
-#buttons{
-    text-align: center;
+h1{
+  color: white;
+}
+
+.contain{
+    border: 5px solid white;
+}
+
+#child1{
+    width: 40%;
+    float: left;
+    padding: 20px;
+}
+
+#child2{
+    width: 40%;
+    float: right;
+    padding: 20px;
 }
