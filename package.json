@@ -17,13 +17,17 @@
   },
   "homepage": "https://github.com/pfundaro9/assignment-2--intro-to-internet-programming--cs-275--spring-2021#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.14",
     "eslint": "^7.24.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "gulp-babel": "^8.0.0",
     "gulp-eslint": "^6.0.0",
     "gulp-html": "^3.4.0",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-stylelint": "^13.0.0"
+    "gulp-sass": "^4.1.0",
+    "gulp-stylelint": "^13.0.0",
+    "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
     "gulp": "^4.0.2"

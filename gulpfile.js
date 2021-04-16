@@ -1,9 +1,13 @@
-
 const {src, dest, watch, series} = require(`gulp`);
 const htmlValidator = require(`gulp-html`);
 const htmlCompressor = require(`gulp-htmlmin`);
 const cssLinter = require(`gulp-stylelint`);
 const jsLinter = require(`gulp-eslint`);
+const sass = require(`gulp-sass`);
+const babel = require(`gulp-babel`);
+const jsCompressor = require(`gulp-uglify`);
+const browserSync = require(`browser-sync`);
+const reload = browserSync.reload;
 
 
 async function chrome () {
@@ -66,9 +70,62 @@ let lintJS = () => {
         .pipe(jsLinter.formatEach(`compact`, process.stderr));
 };
 
+let compileCSSForProd = () => {
+    return src(`css/style.css`)
+        .pipe(sass({
+            outputStyle: `compressed`,
+            precision: 10
+        }).on(`error`, sass.logError))
+        .pipe(dest(`prod/css`));
+};
+
+let transpileJSForProd = () => {
+    return src(`dev/js/*.js`)
+        .pipe(babel())
+        .pipe(jsCompressor())
+        .pipe(dest(`prod/js`));
+};
+
+let serve = () => {
+    browserSync({
+        notify: true,
+        reloadDelay: 1,
+        server: {
+            baseDir: [
+                `dev`
+            ]
+        }
+    });
+
+    watch(`dev/js/*.js`,
+        series(lintJS)
+    ).on(`change`, reload);
+
+    watch(`dev/css/**/*.scss`,
+        series(lintCSS)
+    ).on(`change`, reload);
+
+    watch(`dev/**/*.html`,
+        series(validateHTML)
+    ).on(`change`, reload);
+
+};
+
 
 
 exports.validateHTML = validateHTML;
 exports.compressHTML = compressHTML;
 exports.lintCSS = lintCSS;
 exports.lintJS = lintJS;
+exports.build = series(
+    compressHTML,
+    compileCSSForProd,
+    transpileJSForProd
+);
+exports.serve = series(
+    validateHTML,
+    compressHTML,
+    lintCSS,
+    lintJS,
+    serve
+);
